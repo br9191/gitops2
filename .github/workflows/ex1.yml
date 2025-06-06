@@ -1,9 +1,11 @@
 name: npm test
 on: 
   workflow_dispatch:
+  push:
                
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps: 
-      # TO COMPLETE      
+      - name: Checkout
+        uses: actions/checkout@v4.2.2    
