@@ -8,4 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
-        uses: actions/checkout@v4.2.2    
+        uses: actions/checkout@v4.2.2  
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: run test
+        shell: bash
+        run: |
+          npm install
+          npm test
